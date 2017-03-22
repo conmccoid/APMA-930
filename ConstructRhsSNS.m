@@ -21,7 +21,7 @@ function [r] = ConstructRhsSNS(numUn, nP, nO, M, N, R, dr, dth, U, psivort, Re)
             ijmP = nP(jrow-1,icol);
             ipjP = nP(jrow,icol+1);
             imjP = nP(jrow,icol-1);
-            r(ijO) = Re*((psivort(ijpO)-psivort(ijmO))*(psivort(ipjP)-psivort(imjP)) - ...
+            r(ijO) = -Re*((psivort(ijpO)-psivort(ijmO))*(psivort(ipjP)-psivort(imjP)) - ...
                 (psivort(ipjO)-psivort(imjO))*(psivort(ijpP)-psivort(ijmP)))/(4*dr*dth*r_i);
         end
     end
